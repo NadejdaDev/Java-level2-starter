@@ -12,6 +12,7 @@ public class ComputerRunner {
 
         Computer computer2 = new Computer(1000, 10000);
         computer2.printState();
+        computer2.load(true);
 
 
     }

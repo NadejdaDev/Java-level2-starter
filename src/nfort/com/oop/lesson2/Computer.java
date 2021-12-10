@@ -23,6 +23,12 @@ public class Computer {
         System.out.println("Я загрузился");
     }
 
+    void load(boolean open) {
+        if(open) {
+            System.out.println("Я открыл крышку");
+        }
+    }
+
     void printState() {
 //        load();
         System.out.println("Ssd: " + ssd);
