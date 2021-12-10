@@ -2,6 +2,9 @@ package nfort.com.oop.lesson8;
 
 public class TimeInterval {
 
+    private static final int SECONDS_IN_MINUTES = 60;
+    private static final int MINUTES_IN_HOURS = 60;
+
     private int seconds;
     private int minutes;
     private int hours;
@@ -19,7 +22,7 @@ public class TimeInterval {
     }
 
     public int totalSeconds() {
-        return seconds + minutes * 60 + hours * 60 * 60;
+        return seconds + minutes * SECONDS_IN_MINUTES + hours * MINUTES_IN_HOURS * SECONDS_IN_MINUTES;
     }
 
     public TimeInterval sum(TimeInterval timeInterval) {
