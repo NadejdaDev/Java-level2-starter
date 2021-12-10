@@ -5,9 +5,14 @@ public class ComputerRunner {
     public static void main(String[] args) {
 
         Computer computer = new Computer();
-        computer.load();
+        computer.printState();
 
-        System.out.println("Ram: " + computer.ram);
-        System.out.println("Ssd: " + computer.ssd);
+        Computer computer1 = new Computer(1050);
+        computer1.printState();
+
+        Computer computer2 = new Computer(1000, 10000);
+        computer2.printState();
+
+
     }
 }
