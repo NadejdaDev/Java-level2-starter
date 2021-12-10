@@ -2,21 +2,21 @@ package nfort.com.oop.lesson2;
 
 public class Computer {
 
-    int ssd = 500;
-    int ram;
-
-    Computer() {
-        System.out.println("Я был создан");
-    }
+    private int ssd = 500;
+    private int ram;
 
     Computer(int newSsd) {
         ssd = newSsd;
         ram = 990;
     }
 
-    Computer(int ssd, int newRam) {
+    protected Computer(int ssd, int newRam) {
         this.ssd = ssd;
         ram = newRam;
+    }
+
+    public Computer() {
+        System.out.println("Я был создан");
     }
 
     void load() {
