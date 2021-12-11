@@ -6,8 +6,13 @@ public class Computer {
     private Ram ram;
 
     public Computer(Ssd ssd, Ram ram) {
+        super();
         this.ssd = ssd;
         this.ram = ram;
+    }
+
+    public Computer() {
+        this(null, null);
     }
 
     public void load() {
