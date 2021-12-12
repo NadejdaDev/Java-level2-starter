@@ -6,8 +6,8 @@ public class OopLessonRunner {
 
         Ssd ssd = new Ssd(500);
         Ram ram = new Ram(1024);
-        Computer computer = new Computer(ssd, ram);
-        computer.load();
+//        Computer computer = new Computer(ssd, ram);
+//        computer.load();
 
         Laptop laptop = new Laptop(new Ssd(250), new Ram(512), 2);
         laptop.open();
