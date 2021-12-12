@@ -1,6 +1,6 @@
 package nfort.com.oop.lesson11;
 
-public abstract class Computer {
+public abstract class Computer implements Printable{
 
     private Ssd ssd;
     private Ram ram;
@@ -14,6 +14,7 @@ public abstract class Computer {
     public Computer() {
     }
 
+    @Override
     public void print() {
         System.out.println("Ssd: " + ssd.getValue() + ", ram: " + ram.getValue());
     }
