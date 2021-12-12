@@ -8,12 +8,13 @@ public class OopLessonRunner14 {
         Computer mobile = new Mobile(new Ssd(125), new Ram(516));
         Laptop laptop2 = new Laptop(new Ssd(5000), new Ram(10000), 5);
 
-        print(laptop, mobile, laptop2);
+        printWithRandom(laptop, mobile, laptop2);
     }
 
-    public static void print(Printable... objects) {
+    public static void printWithRandom(Printable... objects) {
         for (Printable object : objects) {
-            object.print();
+            object.printWithRandom();
+//            Printable.generateRandom();
             System.out.println();
         }
     }
