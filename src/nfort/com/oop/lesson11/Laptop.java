@@ -1,9 +1,9 @@
 package nfort.com.oop.lesson11;
 
 /**
- * Laptop <- Computer <- Object
+ * Mobile <- Laptop <- Computer <- Object
  */
-public class Laptop extends Computer{
+public final class Laptop extends Computer{
     private int weight;
 
     {
@@ -20,6 +20,11 @@ public class Laptop extends Computer{
 
     public Laptop() {
         System.out.println("constructor laptop");
+    }
+
+    @Override
+    public void load() {
+        System.out.println("Я загрузился");
     }
 
     public void open() {
