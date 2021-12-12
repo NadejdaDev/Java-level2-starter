@@ -5,23 +5,13 @@ public abstract class Computer {
     private Ssd ssd;
     private Ram ram;
 
-//    {
-//        System.out.println("init block computer");
-//    }
-//
-//    static {
-//        System.out.println("static init bloc computer");
-//    }
-
     public Computer(Ssd ssd, Ram ram) {
-//        super();
+        super();
         this.ssd = ssd;
         this.ram = ram;
-//        System.out.println("constructor computer");
     }
 
     public Computer() {
-//        System.out.println("constructor computer");
     }
 
     public void print() {
@@ -29,10 +19,6 @@ public abstract class Computer {
     }
 
     public abstract void load();
-
-//    public void load() {
-//        System.out.println("Я загрузился!");
-//    }
 
     public Ssd getSsd() {
         return ssd;

@@ -6,22 +6,12 @@ package nfort.com.oop.lesson11;
 public final class Laptop extends Computer{
     private int weight;
 
-//    {
-//        System.out.println("init block laptop");
-//    }
-//
-//    static {
-//        System.out.println("static init bloc laptop");
-//    }
-
     public Laptop(Ssd ssd, Ram ram, int weight){
         super(ssd, ram);
         this.weight = weight;
-//        System.out.println("constructor laptop");
     }
 
     public Laptop() {
-//        System.out.println("constructor laptop");
     }
 
     @Override
