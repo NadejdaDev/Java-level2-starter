@@ -8,6 +8,9 @@ public class BattleGround {
         Warrior warrior = new Warrior("Warrior", 15);
         Mage mage = new Mage("Mage", 20);
 
+        archer.new Wolf("second wolf", 11);       // для (нестатического) внутреннего класса
+//        Archer.Wolf w = new Archer.Wolf("w", 5);  // для (статического) вложенного класса
+//        Archer.Wolf w1 = new Archer.Wolf("w1", 3);
 
         attackEnemy(enemy, archer, warrior, mage);
     }
