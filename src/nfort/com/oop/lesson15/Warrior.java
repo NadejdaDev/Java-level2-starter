@@ -1,6 +1,8 @@
 package nfort.com.oop.lesson15;
 
-public class Warrior extends Hero{
+import nfort.com.oop.lesson18.weapon.MeleeWeapon;
+
+public class Warrior<T extends MeleeWeapon> extends Hero<T>{
 
     public Warrior(String name, int damage) {
         super(name, damage);
