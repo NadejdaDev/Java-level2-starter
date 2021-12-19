@@ -7,23 +7,41 @@ public class ExceptionExample {
 
     public static void main(String[] args) {
         System.out.println("main start");
+        System.out.println(finallyTest());
+
         try{
             unsafe(5);
-        } catch(TimeoutException exception) {
-            // handle exception
+        } catch (RuntimeException exception) {
             exception.printStackTrace();
-        } catch (Exception e) {
-            // handle exception
-            e.printStackTrace();
+        }
+//        catch(TimeoutException exception) {
+//            // handle exception
+//            exception.printStackTrace();
+//        } catch (Exception e) {
+//            // handle exception
+//            e.printStackTrace();
+//        }
+        finally {
+            System.out.println("finally");
         }
         System.out.println("main end");
         // code
     }
 
-    public static void unsafe(int value) throws FileNotFoundException, TimeoutException {
+    public static int finallyTest() {
+        try {
+            return 2;
+        } catch (Throwable throwable) {
+            return 3;
+        } finally {
+            return 4;
+        }
+    }
+
+    public static void unsafe(int value) {
         System.out.println("unsafe start");
         if(value > 0) {
-            throw new FileNotFoundException();
+            throw new RuntimeException();
         }
         System.out.println("unsafe end");
         // code
