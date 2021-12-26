@@ -11,17 +11,29 @@ package nfort.com.oop.lesson25.counter;
  */
 public class Counter {
 
+    private static String description;
     private int count;
+
+    public static void init() {
+        Class<Counter> counterClass = Counter.class;    // т.к. объекты класса класс синглтоны, то только один поток может его захватить
+        synchronized (counterClass) {
+            if (description == null) {
+                description = "Test description";
+            }
+        }
+    }
+
+    public void increment() {
+        synchronized (this) {           // (this.getClass()) здесь также можно вызвать синхронизацию на объекте класса Сlass
+            count++;
+        }
+    }
+
+    public synchronized void decrement() {
+        count--;
+    }
 
     public int getCount() {
         return count;
-    }
-
-    public int increment() {
-        return count++;
-    }
-
-    public int decrement() {
-        return count--;
     }
 }
