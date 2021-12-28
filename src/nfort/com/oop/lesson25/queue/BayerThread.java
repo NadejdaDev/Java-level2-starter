@@ -13,19 +13,24 @@ public class BayerThread implements Runnable {
     @Override
     public void run() {
         try {
-            while (true) {
-                if (!cashboxes.isEmpty()) {
-                    Cashbox cashbox = cashboxes.remove();
-                    System.out.println(Thread.currentThread().getName() + " обслуживается вкассе " + cashbox);
+            synchronized (cashboxes) {
+                while (true) {
+                    if (!cashboxes.isEmpty()) {
+                        Cashbox cashbox = cashboxes.remove();
+                        System.out.println(Thread.currentThread().getName() + " обслуживается вкассе " + cashbox);
 
-                    Thread.sleep(5L);
+                        cashboxes.wait(5L);
 
-                    System.out.println(Thread.currentThread().getName() + " освобождаю кассу " + cashbox);
-                    cashboxes.add(cashbox);
-                    break;
-                } else {
-                    System.out.println(Thread.currentThread().getName() + " ожидает свободную кассу");
-                    Thread.sleep(5L);
+                        System.out.println(Thread.currentThread().getName() + " освобождаю кассу " + cashbox);
+                        cashboxes.add(cashbox);
+                        cashboxes.notifyAll();
+                        break;
+                    } else {
+                        System.out.println(Thread.currentThread().getName() + " ожидает свободную кассу");
+                        cashboxes.wait();       // ждем пока касса не освободится, это произойдет
+                        // только тогда, когда на этом же самом объекте не будет вызван
+                        // метод notify() или notifyAll()
+                    }
                 }
             }
         } catch (InterruptedException e) {
