@@ -1,8 +1,12 @@
 package nfort.com.oop.lesson25.account;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Account {
 
     private static int generator = 1;
+    private final Lock lock = new ReentrantLock();
     private int id;
     private int money;
 
@@ -29,5 +33,9 @@ public class Account {
                 "id=" + id +
                 ", money=" + money +
                 '}';
+    }
+
+    public Lock getLock() {
+        return lock;
     }
 }
