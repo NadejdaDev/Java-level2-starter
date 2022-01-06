@@ -5,9 +5,10 @@ import java.lang.reflect.*;
 public class ReflectionApiExample {
 
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        User user = new User(25L, "Ivan");
+        User user = new User(25L, "Ivan", 24);
 //        testFields(user);
         testMethods2(user);
+//        int age = User.class.getDeclaredField("age").getAnnotation(MinAge.class).age();
 //        Class<? extends User> userClass = user.getClass();
 //        Class<User> userClass1 = User.class;
 //        System.out.println(userClass == userClass1);
